@@ -1,0 +1,6 @@
+numpy
+pandas
+networkx
+gym
+matplotlib
+prettytable

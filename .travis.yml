@@ -1,0 +1,22 @@
+dist: bionic
+
+language: python
+
+python:
+    - "3.6"
+
+install:
+    - python setup.py install
+
+jobs:
+    include:
+        - stage: test
+          name: "Unit Tests"
+          script:
+              - cd test
+              - python -m unittest
+        - stage: reproducible research
+          name: "Reproduce dissertation results"
+          script:
+              - cd efficient_rl
+              - python dissertation_script.py
